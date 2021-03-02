@@ -3,7 +3,7 @@ kind: Application
 metadata:
   name: argo-cd
   labels:
-    argocd-application: true
+    argocd-application: "true"
 spec:
   project: default
   source:
