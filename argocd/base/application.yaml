@@ -2,8 +2,6 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: argo-cd
-  labels:
-    argocd-application: "true"
 spec:
   project: default
   source:
