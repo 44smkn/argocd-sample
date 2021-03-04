@@ -4,4 +4,3 @@ kind: Kustomization
 resources:
   # kustomizeのv4.0からリリースページから持ってこれなくなったためダウンロードして利用
   - sealed-secrets.yaml
-  - application.yaml
