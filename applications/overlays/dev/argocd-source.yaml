@@ -4,5 +4,5 @@ metadata:
   name: argo-cd
 spec:
   source:
-    path: argocd/overlays/dev
+    path: argo-cd/overlays/dev
     targetRevision: master
