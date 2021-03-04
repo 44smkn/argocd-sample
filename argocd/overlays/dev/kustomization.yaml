@@ -8,5 +8,4 @@ resources:
   - repo-secrets.yaml
 
 patchesStrategicMerge:
-  - app-source.yaml
   - argocd-cm.yaml
