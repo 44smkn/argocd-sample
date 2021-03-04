@@ -9,21 +9,19 @@
 ArgoCDが利用するGitリポジトリへの資格情報をまず用意するところから始めます。  
 
 ```sh
-# Sealed SecretsのControllerをデプロイ
-kustomize build apps/secrets | kubectl apply -l needed-for-initialization!=false -f -
+# kustomize/kubeseal はapply済の想定
+# CRDリソースを先にデプロイ（ここ上手くやりたい）
+kustomize build "github.com/argoproj/argo-cd/manifests/crds?ref=v1.8.6" | kubectl apply -f -
 
-# kubeseal のインストール
-VERSION=v0.15.0
-wget https://github.com/bitnami-labs/sealed-secrets/releases/download/${VERSION}/kubeseal-linux-amd64 -O kubeseal
-sudo install -m 755 kubeseal /usr/local/bin/kubeseal
-kubeseal --version
+# Sealed SecretsのControllerをデプロイ
+kustomize build apps/secrets | kubectl apply -f -
 
 # Secretリソースの作成
-kubectl create secret generic repo-secrets --dry-run=client --from-literal=username='<REPLACE_YOUR_USERNAME>' --from-literal=password='<REPLACE_YOUR_PASSWORD>' -o yaml >tmp.yaml
+kubectl create secret generic repo-secrets --dry-run --from-literal=username='<REPLACE_YOUR_USERNAME>' --from-literal=password='<REPLACE_YOUR_PASSWORD>' -o yaml >tmp.yaml
 kubeseal -o yaml <tmp.yaml >repo-secrets.yaml
 
-rm -f tmp.yaml
-mv repo-secrets.yaml argocd/overlays/dev
+rm -f tmp.yaml && mv repo-secrets.yaml argocd/overlays/dev
+# gitで作成したSealedSecretでGitリポジトリを更新する
 ```
 
 ### ArgoCDをデプロイする
