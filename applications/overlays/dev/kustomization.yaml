@@ -5,6 +5,7 @@ resources:
   - ../../base
 
 patchesStrategicMerge:
-  - argocd-source.yaml
+  - helm-values.yaml
+  - source-path.yaml
 
 namespace: argocd
