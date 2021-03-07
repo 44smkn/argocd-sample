@@ -4,3 +4,6 @@ kind: Kustomization
 resources:
   - argo-cd.yaml
   - sealed-secrets.yaml
+  - external-dns.yaml
+
+namespace: argocd

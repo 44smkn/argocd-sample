@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: external-dns
+  namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  project: default
+  source:
+    repoURL: https://charts.bitnami.com/bitnami
+    chart: bitnami/external-dns
+    targetRevision: 4.8.6
+    helm:
+      version: v3
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: kube-system

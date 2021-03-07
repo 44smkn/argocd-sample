@@ -1,0 +1,15 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: external-dns
+  namespace: argocd
+spec:
+  source:
+    helm:
+      parameters:
+        - name: sources
+          value: [service, ingress]
+        - name: provider
+          value: google
+        - name: google.project
+          value: smkn-dev
