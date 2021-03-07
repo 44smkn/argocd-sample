@@ -11,5 +11,14 @@ spec:
           value: [service, ingress]
         - name: provider
           value: google
-        - name: google.project
-          value: smkn-dev
+        - name: policy
+          value: upsert-only
+        - name: registry
+          value: txt
+        - name: txtOwnerId
+          value: 44smkn
+        - name: domainFilters
+          value: argocdsample-a1cac346.com
+        # サービスアカウントが参照される
+        - name: serviceAccount.name
+          value: external-dns

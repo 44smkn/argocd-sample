@@ -2,6 +2,8 @@ apiVersion: networking.k8s.io/v1beta1
 kind: Ingress
 metadata:
   name: argocd-ui
+  annotations:
+    external-dns.alpha.kubernetes.io/hostname: dev.argocdsample-a1cac346.com.
 spec:
   backend:
     serviceName: argocd-server
