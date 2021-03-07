@@ -5,11 +5,3 @@ metadata:
   annotations:
     external-dns.alpha.kubernetes.io/hostname: dev.argocdsample-a1cac346.com.
     networking.gke.io/managed-certificates: argocd-ui
----
-apiVersion: networking.gke.io/v1
-kind: ManagedCertificate
-metadata:
-  name: argocd-ui
-spec:
-  domains:
-    - dev.argocdsample-a1cac346.com

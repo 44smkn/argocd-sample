@@ -6,8 +6,10 @@ resources:
   - ../../base
   - cluster-secrets.yaml
   - repo-secrets.yaml
+  - ingress-certificate.yaml
 
 patchesStrategicMerge:
   - argocd-cm.yaml
+  - ingress-domain.yaml
 
 namespace: argocd
