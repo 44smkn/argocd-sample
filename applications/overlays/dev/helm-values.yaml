@@ -8,7 +8,7 @@ spec:
     helm:
       parameters:
         - name: sources
-          value: [service, ingress]
+          value: "{ingress}"
         - name: provider
           value: google
         - name: policy
@@ -18,7 +18,6 @@ spec:
         - name: txtOwnerId
           value: 44smkn
         - name: domainFilters
-          value: argocdsample-a1cac346.com
-        - name: serviceAccount.annotations
-          value:
-            iam.gke.io/gcp-service-account: "external-dns@infra-forklift-278011.iam.gserviceaccount.com"
+          value: "{argocdsample-a1cac346.com}"
+        - name: "serviceAccount.annotations.iam\\.gke\\.io/gcp-service-account"
+          value: external-dns@infra-forklift-278011.iam.gserviceaccount.com
