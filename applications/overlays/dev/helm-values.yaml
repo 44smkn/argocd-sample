@@ -19,6 +19,6 @@ spec:
           value: 44smkn
         - name: domainFilters
           value: argocdsample-a1cac346.com
-        # サービスアカウントが参照される
-        - name: serviceAccount.name
-          value: external-dns
+        - name: serviceAccount.annotations
+          value:
+            iam.gke.io/gcp-service-account: "external-dns@infra-forklift-278011.iam.gserviceaccount.com"
