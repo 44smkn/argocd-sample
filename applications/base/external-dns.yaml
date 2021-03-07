@@ -9,10 +9,12 @@ spec:
   project: default
   source:
     repoURL: https://charts.bitnami.com/bitnami
-    chart: bitnami/external-dns
+    chart: external-dns
     targetRevision: 4.8.6
     helm:
       version: v3
   destination:
     server: https://kubernetes.default.svc
     namespace: kube-system
+  syncPolicy:
+    automated: {}
