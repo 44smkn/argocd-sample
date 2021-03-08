@@ -11,5 +11,6 @@ resources:
 patchesStrategicMerge:
   - argocd-cm.yaml
   - ingress-domain.yaml
+  - argocd-server-cmd.yaml
 
 namespace: argocd
