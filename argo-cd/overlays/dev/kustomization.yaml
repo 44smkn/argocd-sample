@@ -4,7 +4,6 @@ kind: Kustomization
 resources:
   - https://github.com/argoproj/argo-cd/manifests/cluster-install?ref=v1.8.6
   - ../../base
-  - cluster-secrets.yaml
   - repo-secrets.yaml
   - ingress-certificate.yaml
 
