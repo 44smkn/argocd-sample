@@ -5,3 +5,11 @@ metadata:
 spec:
   source:
     path: argo-cd/overlays/dev
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: argocd-sample
+spec:
+  source:
+    path: applications/overlays/dev
