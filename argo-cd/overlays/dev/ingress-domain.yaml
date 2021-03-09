@@ -3,5 +3,5 @@ kind: Ingress
 metadata:
   name: argocd-ui
   annotations:
-    external-dns.alpha.kubernetes.io/hostname: dev.argocdsample-a1cac346.com.
+    external-dns.alpha.kubernetes.io/hostname: dev.argocdsample-a1cac346.ml.
     networking.gke.io/managed-certificates: argocd-ui

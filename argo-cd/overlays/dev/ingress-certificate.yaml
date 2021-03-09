@@ -4,4 +4,4 @@ metadata:
   name: argocd-ui
 spec:
   domains:
-    - dev.argocdsample-a1cac346.com
+    - dev.argocdsample-a1cac346.ml

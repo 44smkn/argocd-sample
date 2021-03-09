@@ -18,6 +18,6 @@ spec:
         - name: txtOwnerId
           value: 44smkn
         - name: domainFilters
-          value: "{argocdsample-a1cac346.com}"
+          value: "{argocdsample-a1cac346.ml}"
         - name: "serviceAccount.annotations.iam\\.gke\\.io/gcp-service-account"
           value: external-dns@infra-forklift-278011.iam.gserviceaccount.com
