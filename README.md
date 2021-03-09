@@ -2,6 +2,7 @@
 
 ## 前提
 
+ArgocdのIngressで利用するドメインは予め取得しておきます（自分はfreenomで取得しました）  
 KubernetesクラスタはGKEを利用します。構築にはTerraformを使います。Terraformを使ったGCPクラスタ作成については[こちら](https://44smkn.hatenadiary.com/entry/2020/06/07/103953)から。  
 external-dnsがちゃんと動くようにいくつか事前に設定をしておく必要があります。  
   
